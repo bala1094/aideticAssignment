@@ -1,0 +1,9 @@
+.button-box {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mat-raised-button {
+    margin: 10px;
+}

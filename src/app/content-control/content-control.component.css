@@ -1,0 +1,17 @@
+.body-container {
+    width: 100%;
+    display: flex;
+}
+
+.left-container, .right-container {
+    flex-grow: 1;
+}
+
+.right-container {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.mid-container {
+    flex-grow: 5;
+}

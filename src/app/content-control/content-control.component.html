@@ -1,0 +1,40 @@
+<div class="body-container">
+  <div class="left-container">
+    <a mat-raised-button color="primary" routerLink="/home">Go Back</a>
+  </div>
+  <div *ngIf="enableTable" class="mid-container">
+    <mat-table #table [dataSource]="tableData">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef class='date-column column-header'> ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          {{element.id}}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="first_name">
+        <mat-header-cell *matHeaderCellDef class='date-column column-header'> First Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          {{element.first_name}}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="last_name">
+        <mat-header-cell *matHeaderCellDef class='date-column column-header'> Last Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          {{element.last_name}}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef class='date-column column-header'> Email-ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          {{element.email}}
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row class="table-row" *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row">
+     </mat-row>
+    </mat-table>
+  </div>
+  <div class="right-container">
+   <app-button-handler [buttonState]="buttonState" (btnEventEmit)="buttonOnClick()"></app-button-handler>
+  </div>
+</div>
